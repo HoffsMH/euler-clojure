@@ -2,32 +2,24 @@
   (:require [clojure.test :refer :all]
             [euler-clojure.solutions.1 :refer :all]))
 
-(deftest solution-default
-  (testing "with no parameters"
-    (is (=
-      (solution)
-      698))))
 
-(deftest is-a-multiple-test
-  (testing "with standard numbers"
+(deftest multiple-set-test
+  (testing "with normal param"
     (is (=
-      (is-a-multiple 10 5)
-      true))
-    (is (=
-      (is-a-multiple 10 3)
-      false))
-    (is (=
-      (is-a-multiple 100 2)
-      true))
-    (is (=
-      (is-a-multiple 7 3)
-      false))
-    (is (=
-      (is-a-multiple 20 10)
-      true))))
+      (multiple-set {:factor 5 :max-num 20})
+      #{0 5 10 15}))))
 
-(deftest sum-of-multiples-test
-  (testing "with beginning arguments"
+(deftest merge-multiples-test
+  (testing "with normal param"
     (is (=
-      (sum-of-multiples {:of '(3 6 7) :below 1200})
-      "some text"))))
+      (merge-multiples #{0 5 10 15} #{0 3 6 9 12 15})
+      #{0 15}))))
+
+(deftest update-factors-test
+  (testing "with normal param"
+    (is (=
+      (update-factors #{0 2 3})
+      #{2 3})))
+  (is (=
+      (update-factors #{9 2 3 5 1})
+      #{2 3 5 1})))
