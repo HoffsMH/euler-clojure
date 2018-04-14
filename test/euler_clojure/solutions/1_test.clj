@@ -2,7 +2,6 @@
   (:require [clojure.test :refer :all]
             [euler-clojure.solutions.1 :refer :all]))
 
-
 (deftest multiple-set-test
   (testing "with normal param"
     (is (=
@@ -22,4 +21,4 @@
       #{2 3})))
   (is (=
       (update-factors #{9 2 3 5 1})
-      #{2 3 5 1})))
+      #{2 3 5 9})))

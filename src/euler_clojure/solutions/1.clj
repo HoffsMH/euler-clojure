@@ -7,7 +7,7 @@
 ; takes a number and a max
 ; returns a set of all the multiples of number between 0 and max
 (defn multiple-set
-  [{factor :factor max-num :max-num}]
+  [{}]
   (set (range 0 max-num factor)))
 
 (defn merge-multiples
